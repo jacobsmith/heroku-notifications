@@ -1,1 +1,1 @@
-PORT=60123 ruby $(pwd)/app.rb
+cd /Users/jacobsmith/github/jacobsmith/heroku-notifications && PORT=60123 bundle exec /Users/jacobsmith/.asdf/installs/ruby/2.6.0/bin/ruby /Users/jacobsmith/github/jacobsmith/heroku-notifications/app.rb

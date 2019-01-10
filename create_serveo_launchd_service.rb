@@ -15,6 +15,10 @@ launchd_content = <<~EOF
 </array>
 <key>KeepAlive</key>
 <true/>
+<key>StandardOutPath</key>
+<string>/tmp/serveo.stdout</string>
+<key>StandardErrorPath</key>
+<string>/tmp/serveo.stderr</string>
 </dict>
 </plist>
 EOF
