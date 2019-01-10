@@ -1,0 +1,8 @@
+ruby create_serveo_launchd_service.rb
+ruby create_heroku_notifcations_launchd_service.rb
+
+launchctl load heroku_notifications_launchd_service.plist
+launchctl start heroku_notifications_lanuchd_service.plist
+
+launchctl load serveo_launchd_service.plist
+launchctl start serveo_launchd_service.plist
