@@ -1,6 +1,11 @@
 ruby create_serveo_launchd_service.rb
 ruby create_heroku_notifcations_launchd_service.rb
 
+echo What custom domain do you want on serveo.net?
+read custom_domain
+
+sed -i -e "s/CUSTOM_DOMAIN/$custom_domain/" run_serveo_service
+
 launchctl unload heroku_notifications_launchd_service.plist
 launchctl load heroku_notifications_launchd_service.plist
 launchctl start heroku_notifications_lanuchd_service.plist
@@ -8,3 +13,5 @@ launchctl start heroku_notifications_lanuchd_service.plist
 launchctl unload serveo_launchd_service.plist
 launchctl load serveo_launchd_service.plist
 launchctl start serveo_launchd_service.plist
+
+echo "Unless there are errors above, successfuly created and started Heroku Notifications. Please make sure you setup a Heroku Webhook pointing to $custom_domain.serveo.net "
