@@ -6,20 +6,27 @@ launchd_content = <<~EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-<key>Label</key>
-<string>com.serveo.localnotifications</string>
-<key>ProgramArguments</key>
-<array>
-<string>#{ pwd + '/run_serveo_service' }</string>
-</array>
-<key>KeepAlive</key>
-<true/>
-<key>StandardOutPath</key>
-<string>/tmp/serveo.stdout</string>
-<key>StandardErrorPath</key>
-<string>/tmp/serveo.stderr</string>
-</dict>
+  <dict>
+    <key>Label</key>
+      <string>com.serveo.localnotifications</string>
+
+    <key>ProgramArguments</key>
+      <array>
+        <string>#{ pwd + '/run_serveo_service' }</string>
+      </array>
+
+    <key>KeepAlive</key>
+      <dict>
+        <key>NetworkState</key>
+        <true />
+      </dict>
+
+    <key>StandardOutPath</key>
+      <string>/tmp/serveo.stdout</string>
+
+    <key>StandardErrorPath</key>
+      <string>/tmp/serveo.stderr</string>
+  </dict>
 </plist>
 EOF
 

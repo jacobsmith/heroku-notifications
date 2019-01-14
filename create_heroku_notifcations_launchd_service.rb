@@ -16,7 +16,10 @@ launchd_content = <<~EOF
     </array>
 
     <key>KeepAlive</key>
-      <true/>
+    <dict>
+      <key>NetworkState</key>
+      <true />
+    </dict>
 
     <key>StandardOutPath</key>
       <string>/tmp/heroku_notifications.stdout</string>
